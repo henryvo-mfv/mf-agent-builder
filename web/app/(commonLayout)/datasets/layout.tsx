@@ -15,7 +15,7 @@ export default function DatasetsLayout({ children }: { children: React.ReactNode
     if (isLoadingCurrentWorkspace || !currentWorkspace.id)
       return
     if (!(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator))
-      router.replace('/apps')
+      router.replace('/dashboard')
   }, [isCurrentWorkspaceEditor, isCurrentWorkspaceDatasetOperator, isLoadingCurrentWorkspace, currentWorkspace, router])
 
   if (isLoadingCurrentWorkspace || !(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator))

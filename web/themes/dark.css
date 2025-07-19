@@ -21,7 +21,7 @@ html[data-theme="dark"] {
   --color-components-tooltip-bg: rgb(24 24 27 / 0.95);
 
   --color-components-button-primary-text: rgb(255 255 255 / 0.95);
-  --color-components-button-primary-bg: #155aef;
+  --color-components-button-primary-bg: #ff7a00;
   --color-components-button-primary-border: rgb(255 255 255 / 0.12);
   --color-components-button-primary-bg-hover: #296dff;
   --color-components-button-primary-border-hover: rgb(255 255 255 / 0.2);
@@ -337,8 +337,8 @@ html[data-theme="dark"] {
   --color-components-icon-bg-yellow-solid: #eaaa08;
   --color-components-icon-bg-green-solid: #4ca30d;
   --color-components-icon-bg-teal-solid: #0e9384;
-  --color-components-icon-bg-blue-light-solid: #0ba5ec;
-  --color-components-icon-bg-blue-solid: #155aef;
+  --color-components-icon-bg-blue-light-solid: #4d9fff;
+  --color-components-icon-bg-blue-solid: #ff7a00;
   --color-components-icon-bg-indigo-solid: #444ce7;
   --color-components-icon-bg-violet-solid: #7839ee;
   --color-components-icon-bg-midnight-solid: #5d698d;
@@ -613,7 +613,7 @@ html[data-theme="dark"] {
   --color-util-colors-blue-light-blue-light-200: #065986;
   --color-util-colors-blue-light-blue-light-300: #026aa2;
   --color-util-colors-blue-light-blue-light-400: #0086c9;
-  --color-util-colors-blue-light-blue-light-500: #0ba5ec;
+  --color-util-colors-blue-light-blue-light-500: #4d9fff;
   --color-util-colors-blue-light-blue-light-600: #36bffa;
   --color-util-colors-blue-light-blue-light-700: #7cd4fd;
 
@@ -630,7 +630,7 @@ html[data-theme="dark"] {
   --color-util-colors-blue-brand-blue-brand-100: #00329e;
   --color-util-colors-blue-brand-blue-brand-200: #003dc1;
   --color-util-colors-blue-brand-blue-brand-300: #004aeb;
-  --color-util-colors-blue-brand-blue-brand-400: #155aef;
+  --color-util-colors-blue-brand-blue-brand-400: #4d9fff;
   --color-util-colors-blue-brand-blue-brand-500: #296dff;
   --color-util-colors-blue-brand-blue-brand-600: #5289ff;
   --color-util-colors-blue-brand-blue-brand-700: #84abff;

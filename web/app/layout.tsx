@@ -53,10 +53,14 @@ const LocaleLayout = async ({
   return (
     <html lang={locale ?? 'en'} className="h-full" suppressHydrationWarning>
       <head>
+        <title>MoneyForward Agent Builder</title>
         <meta name="theme-color" content="#FFFFFF" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <link rel="icon" type="image/png" href="/logo/logo.png" />
+        <link rel="shortcut icon" href="/logo/logo.png" />
+        <link rel="apple-touch-icon" href="/logo/logo.png" />
       </head>
       <body
         className="color-scheme h-full select-auto"

@@ -42,19 +42,19 @@ const Nav = ({
   useEffect(() => {
     if (pathname === link)
       setLinkLastSearchParams(searchParams.toString())
-  }, [pathname, searchParams])
+  }, [pathname, searchParams, link])
 
   return (
     <div className={`
-      flex h-8 max-w-[670px] shrink-0 items-center rounded-xl px-0.5 text-sm font-medium max-[1024px]:max-w-[400px]
-      ${isActivated && 'bg-components-main-nav-nav-button-bg-active font-semibold shadow-md'}
-      ${!curNav && !isActivated && 'hover:bg-components-main-nav-nav-button-bg-hover'}
+      flex h-9 max-w-[670px] shrink-0 items-center rounded-lg px-1 text-sm font-medium transition-all duration-200 max-[1024px]:max-w-[400px]
+      ${isActivated && 'border border-components-panel-border-subtle bg-components-main-nav-nav-button-bg-active font-semibold shadow-sm'}
+      ${!curNav && !isActivated && 'border border-transparent hover:border-components-panel-border-subtle hover:bg-components-main-nav-nav-button-bg-hover hover:shadow-sm'}
     `}>
       <Link href={link + (linkLastSearchParams && `?${linkLastSearchParams}`)}>
         <div
           onClick={() => setAppDetail()}
           className={classNames(`
-            flex h-7 cursor-pointer items-center rounded-[10px] px-2.5
+            flex h-7 cursor-pointer items-center rounded-lg px-3 transition-all duration-200
             ${isActivated ? 'text-components-main-nav-nav-button-text-active' : 'text-components-main-nav-nav-button-text'}
             ${curNav && isActivated && 'hover:bg-components-main-nav-nav-button-bg-active-hover'}
           `)}
@@ -62,13 +62,11 @@ const Nav = ({
           onMouseLeave={() => setHovered(false)}
         >
           <div>
-            {
-              (hovered && curNav)
-                ? <ArrowNarrowLeft className='h-4 w-4' />
-                : isActivated
-                  ? activeIcon
-                  : icon
-            }
+            {(() => {
+              if (hovered && curNav) return <ArrowNarrowLeft className='h-4 w-4' />
+              if (isActivated) return activeIcon
+              return icon
+            })()}
           </div>
           <div className='ml-2 max-[1024px]:hidden'>
             {text}

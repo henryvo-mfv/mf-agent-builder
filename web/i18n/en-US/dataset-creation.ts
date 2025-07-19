@@ -198,7 +198,7 @@ const translation = {
     resume: 'Resume processing',
     navTo: 'Go to document',
     sideTipTitle: 'What\'s next',
-    sideTipContent: 'After the document finishes indexing, the Knowledge can be integrated into the application as context, you can find the context setting in the prompt orchestration page. You can also create it as an independent ChatGPT indexing plugin for release.',
+    sideTipContent: 'After the document finishes indexing, the Knowledge can be integrated into your AI agents as context. You can also connect your MoneyForward subscription data to enhance your agents with real-time financial and operational insights from your MoneyForward products.',
     modelTitle: 'Are you sure to stop embedding?',
     modelContent: 'If you need to resume processing later, you will continue from where you left off.',
     modelButtonConfirm: 'Confirm',
@@ -206,7 +206,7 @@ const translation = {
   },
   otherDataSource: {
     title: 'Connect to other data sources?',
-    description: 'Currently, Dify\'s knowledge base only has limited data sources. Contributing a data source to the Dify knowledge base is a fantastic way to help enhance the platform\'s flexibility and power for all users. Our contribution guide makes it easy to get started. Please click on the link below to learn more.',
+    description: 'Currently, MoneyForward Agent Builder\'s knowledge base only has limited data sources. Contributing a data source to the MoneyForward Agent Builder knowledge base is a fantastic way to help enhance the platform\'s flexibility and power for all users. Our contribution guide makes it easy to get started. Please click on the link below to learn more.',
     learnMore: 'Learn more',
   },
 }

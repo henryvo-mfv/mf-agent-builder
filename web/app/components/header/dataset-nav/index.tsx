@@ -4,8 +4,8 @@ import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams, useRouter } from 'next/navigation'
 import {
-  RiBook2Fill,
-  RiBook2Line,
+  RiDatabaseFill,
+  RiDatabaseLine,
 } from '@remixicon/react'
 import useSWR from 'swr'
 import useSWRInfinite from 'swr/infinite'
@@ -43,8 +43,8 @@ const DatasetNav = () => {
 
   return (
     <Nav
-      icon={<RiBook2Line className='h-4 w-4' />}
-      activeIcon={<RiBook2Fill className='h-4 w-4' />}
+      icon={<RiDatabaseLine className='h-4 w-4' />}
+      activeIcon={<RiDatabaseFill className='h-4 w-4' />}
       text={t('common.menus.datasets')}
       activeSegment='datasets'
       link='/datasets'

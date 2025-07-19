@@ -1,13 +1,14 @@
 'use client'
 
-import { useTranslation } from 'react-i18next'
-import Link from 'next/link'
-import classNames from '@/utils/classnames'
-import { Group } from '@/app/components/base/icons/src/vender/other'
 import { useSelectedLayoutSegment } from 'next/navigation'
-import DownloadingIcon from './downloading-icon'
+import {
+  RiPuzzleFill,
+  RiPuzzleLine,
+} from '@remixicon/react'
+import BaseNavItem from '../base-nav-item'
 import { usePluginTaskStatus } from '@/app/components/plugins/plugin-page/plugin-tasks/hooks'
 import Indicator from '@/app/components/header/indicator'
+import DownloadingIcon from './downloading-icon'
 
 type PluginsNavProps = {
   className?: string
@@ -16,50 +17,46 @@ type PluginsNavProps = {
 const PluginsNav = ({
   className,
 }: PluginsNavProps) => {
-  const { t } = useTranslation()
   const selectedSegment = useSelectedLayoutSegment()
-  const activated = selectedSegment === 'plugins'
+  const isActive = selectedSegment === 'plugins'
   const {
     isInstalling,
     isInstallingWithError,
     isFailed,
   } = usePluginTaskStatus()
 
+  // Create custom icon element with status indicators
+  const createIcon = (filled: boolean) => (
+    <div className="relative">
+      {/* Status indicator */}
+      {(isFailed || isInstallingWithError) && !isActive && (
+        <Indicator
+          color='red'
+          className='absolute -left-1 -top-1 z-10'
+        />
+      )}
+
+      {/* Main icon */}
+      {(!(isInstalling || isInstallingWithError) || isActive) && (
+        filled ? <RiPuzzleFill className='h-4 w-4' /> : <RiPuzzleLine className='h-4 w-4' />
+      )}
+
+      {/* Downloading icon */}
+      {(isInstalling || isInstallingWithError) && !isActive && (
+        <DownloadingIcon />
+      )}
+    </div>
+  )
+
   return (
-    <Link href="/plugins" className={classNames(
-      className, 'group', 'plugins-nav-button', // used for use-fold-anim-into.ts
-    )}>
-      <div
-        className={classNames(
-          'system-sm-medium relative flex h-8 flex-row items-center justify-center gap-0.5 rounded-xl border border-transparent p-1.5',
-          activated && 'border-components-main-nav-nav-button-border bg-components-main-nav-nav-button-bg-active text-components-main-nav-nav-button-text shadow-md',
-          !activated && 'text-text-tertiary hover:bg-state-base-hover hover:text-text-secondary',
-          (isInstallingWithError || isFailed) && !activated && 'border-components-panel-border-subtle',
-        )}
-      >
-        {
-          (isFailed || isInstallingWithError) && !activated && (
-            <Indicator
-              color='red'
-              className='absolute left-[-1px] top-[-1px]'
-            />
-          )
-        }
-        <div className='mr-0.5 flex h-5 w-5 items-center justify-center'>
-          {
-            (!(isInstalling || isInstallingWithError) || activated) && (
-              <Group className='h-4 w-4' />
-            )
-          }
-          {
-            (isInstalling || isInstallingWithError) && !activated && (
-              <DownloadingIcon />
-            )
-          }
-        </div>
-        <span className='px-0.5'>{t('common.menus.plugins')}</span>
-      </div>
-    </Link>
+    <BaseNavItem
+      href="/plugins"
+      icon={createIcon(false)}
+      activeIcon={createIcon(true)}
+      translationKey="common.menus.plugins"
+      isActive={isActive}
+      className={`${className} plugins-nav-button`} // preserve the plugins-nav-button class for animations
+    />
   )
 }
 

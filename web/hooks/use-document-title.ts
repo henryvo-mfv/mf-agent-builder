@@ -14,8 +14,8 @@ export default function useDocumentTitle(title: string) {
       favicon = systemFeatures.branding.favicon
     }
     else {
-      titleStr = `${prefix}Dify`
-      favicon = '/favicon.ico'
+      titleStr = `${prefix}MoneyForward Agent Builder`
+      favicon = '/logo/logo.png'
     }
   }
   useTitle(titleStr)

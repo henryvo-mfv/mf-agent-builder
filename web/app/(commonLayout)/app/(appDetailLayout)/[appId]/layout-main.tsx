@@ -93,7 +93,7 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
       },
     ]
     return navs
-  }, [])
+  }, [t])
 
   useDocumentTitle(appDetail?.name || t('common.menus.appDetail'))
 
@@ -102,9 +102,9 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
       const localeMode = localStorage.getItem('app-detail-collapse-or-expand') || 'expand'
       const mode = isMobile ? 'collapse' : 'expand'
       setAppSiderbarExpand(isMobile ? mode : localeMode)
-      // TODO: consider screen size and mode
-      // if ((appDetail.mode === 'advanced-chat' || appDetail.mode === 'workflow') && (pathname).endsWith('workflow'))
-      //   setAppSiderbarExpand('collapse')
+      // Automatically collapse sidebar in workflow mode for better UX
+      if ((appDetail.mode === 'advanced-chat' || appDetail.mode === 'workflow') && (pathname).endsWith('workflow'))
+        setAppSiderbarExpand('collapse')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [appDetail, isMobile])
@@ -116,7 +116,7 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
       setAppDetailRes(res)
     }).catch((e: any) => {
       if (e.status === 404)
-        router.replace('/apps')
+        router.replace('/dashboard')
     }).finally(() => {
       setIsLoadingAppDetail(false)
     })

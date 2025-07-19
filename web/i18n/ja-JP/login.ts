@@ -1,6 +1,6 @@
 const translation = {
   pageTitle: 'はじめましょう！👋',
-  welcome: 'Dify へようこそ。続行するにはログインしてください。',
+  welcome: 'MoneyForward Agent Builder へようこそ。続行するにはログインしてください。',
   email: 'メールアドレス',
   emailPlaceholder: 'メールアドレスを入力してください',
   password: 'パスワード',
@@ -20,7 +20,7 @@ const translation = {
   invitationCodePlaceholder: '招待コードを入力してください',
   interfaceLanguage: 'インターフェース言語',
   timezone: 'タイムゾーン',
-  go: 'Dify へ移動',
+  go: 'MoneyForward Agent Builder へ移動',
   sendUsMail: '自己紹介をメールで送信し、招待リクエストを処理します。',
   acceptPP: 'プライバシーポリシーを読み、同意します',
   reset: 'パスワードをリセットするには、次のコマンドを実行してください',
@@ -58,7 +58,7 @@ const translation = {
     registrationNotAllowed: 'アカウントが見つかりません。登録するためにシステム管理者に連絡してください。',
   },
   license: {
-    tip: 'GitHub のオープンソースライセンスを確認してから、Dify Community Edition を開始してください。',
+    tip: 'GitHub のオープンソースライセンスを確認してから、MoneyForward Agent Builder Community Edition を開始してください。',
     link: 'オープンソースライセンス',
   },
   join: '参加する',

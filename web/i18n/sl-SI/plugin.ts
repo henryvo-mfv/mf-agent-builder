@@ -187,7 +187,7 @@ const translation = {
     noPluginFound: 'Nobenega vtičnika ni bilo najti.',
     viewMore: 'Oglejte si več',
     moreFrom: 'Več iz tržnice',
-    difyMarketplace: 'Dify Marketplace',
+    difyMarketplace: 'MoneyForward Marketplace',
   },
   task: {
     installing: 'Namestitev {{installingLength}} vtičnikov, 0 končanih.',

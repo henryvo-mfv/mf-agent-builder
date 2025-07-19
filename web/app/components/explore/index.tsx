@@ -35,12 +35,12 @@ const Explore: FC<IExploreProps> = ({
       const currUser = accounts.find(account => account.id === userProfile.id)
       setHasEditPermission(currUser?.role !== 'normal')
     })()
-  }, [])
+  }, [userProfile.id])
 
   useEffect(() => {
     if (isCurrentWorkspaceDatasetOperator)
       return router.replace('/datasets')
-  }, [isCurrentWorkspaceDatasetOperator])
+  }, [isCurrentWorkspaceDatasetOperator, router])
 
   return (
     <div className='flex h-full overflow-hidden border-t border-divider-regular bg-background-body'>

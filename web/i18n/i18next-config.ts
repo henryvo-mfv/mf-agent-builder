@@ -43,6 +43,7 @@ const loadLangResources = (lang: string) => ({
     plugin: require(`./${lang}/plugin`).default,
     pluginTags: require(`./${lang}/plugin-tags`).default,
     time: require(`./${lang}/time`).default,
+    dashboard: require(`./${lang}/dashboard`).default,
     education: requireSilent(lang),
   },
 })

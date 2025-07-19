@@ -180,7 +180,7 @@ const translation = {
     sortBy: 'Чорне місто',
     pluginsResult: 'Результати {{num}}',
     empower: 'Розширюйте можливості розробки штучного інтелекту',
-    difyMarketplace: 'Dify Marketplace',
+    difyMarketplace: 'MoneyForward Marketplace',
     viewMore: 'Дивитись більше',
     noPluginFound: 'Плагін не знайдено',
     verifiedTip: 'Перевірено Dify',
