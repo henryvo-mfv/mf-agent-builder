@@ -1,3 +1,5 @@
+import { get } from './base'
+
 // Dashboard specific types
 export type DashboardStats = {
   activeAgents: number
@@ -23,93 +25,60 @@ export type DashboardData = {
   recentAgents: RecentAgent[]
 }
 
-// Mock data for dashboard - using dummy data as requested
-const MOCK_DASHBOARD_DATA: DashboardData = {
-  stats: {
-    activeAgents: 12,
-    drafts: 5,
-    recentActivityTasks: 142,
-    dataSources: 8,
-  },
-  recentAgents: [
-    {
-      id: '1',
-      name: 'Invoice Processing Assistant',
-      mode: 'workflow',
-      status: 'active',
-      lastEdited: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
-      iconType: 'emoji',
-      icon: '📄',
-      iconBackground: '#F3F4F6',
-      iconUrl: null,
-    },
-    {
-      id: '2',
-      name: 'Customer Support Bot',
-      mode: 'chat',
-      status: 'active',
-      lastEdited: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(), // 4 hours ago
-      iconType: 'emoji',
-      icon: '🤖',
-      iconBackground: '#EEF2FF',
-      iconUrl: null,
-    },
-    {
-      id: '3',
-      name: 'HR Onboarding Agent',
-      mode: 'advanced-chat',
-      status: 'draft',
-      lastEdited: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(), // 6 hours ago
-      iconType: 'emoji',
-      icon: '👥',
-      iconBackground: '#F0FDF4',
-      iconUrl: null,
-    },
-    {
-      id: '4',
-      name: 'Document Analyzer',
-      mode: 'completion',
-      status: 'active',
-      lastEdited: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
-      iconType: 'emoji',
-      icon: '🔍',
-      iconBackground: '#FEF3C7',
-      iconUrl: null,
-    },
-    {
-      id: '5',
-      name: 'Email Assistant',
-      mode: 'chat',
-      status: 'draft',
-      lastEdited: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
-      iconType: 'emoji',
-      icon: '✉️',
-      iconBackground: '#F0F9FF',
-      iconUrl: null,
-    },
-  ],
+// Default empty data structures
+const EMPTY_DASHBOARD_STATS: DashboardStats = {
+  activeAgents: 0,
+  drafts: 0,
+  recentActivityTasks: 0,
+  dataSources: 0,
 }
 
-// Fetch dashboard statistics (using mock data)
+const EMPTY_DASHBOARD_DATA: DashboardData = {
+  stats: EMPTY_DASHBOARD_STATS,
+  recentAgents: [],
+}
+
+// Fetch dashboard statistics
 export const fetchDashboardStats = async (): Promise<DashboardStats> => {
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 500))
-
-  return MOCK_DASHBOARD_DATA.stats
+  try {
+    const response = await get('/dashboard/stats') as DashboardStats
+    return response
+  }
+ catch (error) {
+    console.error('Failed to fetch dashboard stats:', error)
+    return EMPTY_DASHBOARD_STATS
+  }
 }
 
-// Fetch recent agents (using mock data)
-export const fetchRecentAgents = async (): Promise<RecentAgent[]> => {
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 300))
-
-  return MOCK_DASHBOARD_DATA.recentAgents
+// Fetch recent agents
+export const fetchRecentAgents = async (limit?: number): Promise<RecentAgent[]> => {
+  try {
+    const url = limit ? `/dashboard/recent-agents?limit=${limit}` : '/dashboard/recent-agents'
+    const response = await get(url) as RecentAgent[]
+    return response
+  }
+ catch (error) {
+    console.error('Failed to fetch recent agents:', error)
+    return []
+  }
 }
 
-// Fetch all dashboard data in one call (using mock data)
+// Fetch all dashboard data in one call
 export const fetchDashboardData = async (): Promise<DashboardData> => {
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 600))
+  try {
+    // Fetch both stats and recent agents
+    const [stats, recentAgents] = await Promise.all([
+      fetchDashboardStats(),
+      fetchRecentAgents(),
+    ])
 
-  return MOCK_DASHBOARD_DATA
+    return {
+      stats,
+      recentAgents,
+    }
+  }
+ catch (error) {
+    console.error('Failed to fetch dashboard data:', error)
+    return EMPTY_DASHBOARD_DATA
+  }
 }
