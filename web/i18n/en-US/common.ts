@@ -146,14 +146,93 @@ const translation = {
     capabilities: 'MultiModal Capabilities',
   },
   menus: {
-    explore: 'Explore',
-    apps: 'My Agents',
+    apps: 'Apps',
+    // tools: 'Tools',
+    toolbox: 'Toolbox',
+    datasets: 'Datasets',
     plugins: 'Plugins',
-    pluginInstall: 'Install',
-    datasets: 'Data Sources',
-    newDataset: 'Connect Data Source',
-    tools: 'Tools',
+    explore: 'Explore',
+    appDetail: 'App Details',
+    datasetDetail: 'Dataset Details',
+    appLog: 'Logs',
     dashboard: 'Dashboard',
+  },
+  toolbox: {
+    title: 'Agent Toolbox',
+    subtitle: 'Explore the capabilities and integrations you can add to your agents to automate any task.',
+    coreCapabilities: {
+      title: 'Core Capabilities',
+      description: 'Powerful native tools built into the platform.',
+      codeInterpreter: {
+        title: 'Code Interpreter',
+        description: 'Execute custom Python scripts for complex calculations, data validation, and specialized business logic.',
+        useCase: 'e.g., Calculate foreign exchange rates, validate financial data integrity',
+        learnMore: 'Learn More',
+      },
+      webScraper: {
+        title: 'Web Scraper',
+        description: 'Extract real-time data from websites and APIs for dynamic content integration.',
+        useCase: 'e.g., Monitor competitor pricing, gather market research data',
+        learnMore: 'Learn More',
+      },
+      documentProcessor: {
+        title: 'Document Processor',
+        description: 'Parse and analyze various document formats including PDF, Word, and Excel files.',
+        useCase: 'e.g., Extract data from invoices, analyze financial reports',
+        learnMore: 'Learn More',
+      },
+      apiConnector: {
+        title: 'API Connector',
+        description: 'Connect to any REST API to fetch data and trigger external actions.',
+        useCase: 'e.g., Integrate with CRM systems, trigger email notifications',
+        learnMore: 'Learn More',
+      },
+    },
+
+    thirdPartyIntegrations: {
+      title: 'Third-Party Integrations',
+      description: 'Connect with the tools your team uses every day.',
+      install: 'Install',
+      configured: '✓ Configured',
+      slack: {
+        title: 'Slack',
+        description: 'Send messages and alerts to your Slack workspaces.',
+      },
+      googleSheets: {
+        title: 'Google Sheets',
+        description: 'Read from and write to Google Sheets for data management.',
+      },
+      email: {
+        title: 'Email',
+        description: 'Send automated emails and notifications.',
+      },
+      gmail: {
+        title: 'Gmail',
+        description: 'Send emails and manage your Gmail inbox directly.',
+      },
+      calendar: {
+        title: 'Calendar',
+        description: 'Schedule meetings and manage calendar events.',
+      },
+      teams: {
+        title: 'Microsoft Teams',
+        description: 'Send messages and collaborate in Teams channels.',
+      },
+    },
+    marketplace: {
+      title: 'Explore the Marketplace',
+      description: 'Discover hundreds of specialized tools and community-built integrations.',
+      visitButton: 'Visit Marketplace →',
+    },
+    customTools: {
+      title: 'Custom Tools',
+      emptyState: {
+        title: 'Add a Custom Tool',
+        description: 'Connect to your own internal APIs to create powerful, private tools for your agents.',
+        addButton: '+ Add Custom Tool',
+      },
+    },
+
   },
   userProfile: {
     settings: 'Settings',

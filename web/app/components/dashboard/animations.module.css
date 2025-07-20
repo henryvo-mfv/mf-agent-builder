@@ -1,0 +1,50 @@
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-8px) scale(0.9);
+  }
+  75% {
+    transform: translateY(-25px) translateX(15px) scale(1.05);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animateFloat {
+  animation: float linear infinite;
+}
+
+.animateGradientShift {
+  background-size: 200% 200%;
+  animation: gradientShift 20s ease infinite;
+}
+
+.animateBreathe {
+  animation: breathe 6s ease-in-out infinite;
+} 

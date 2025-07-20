@@ -218,6 +218,16 @@ const DataSourcesContainer = () => {
 
       {activeTab === 'datasources' && (
         <div className='px-12 pb-8'>
+          {/* Page Header */}
+          <div className='mb-12'>
+            <h1 className='mb-2 text-3xl font-bold text-text-primary'>
+              Data Sources
+            </h1>
+            <p className='mb-8 max-w-4xl text-base leading-relaxed text-text-secondary'>
+              Your knowledge library. Connect to MoneyForward services, upload custom files, and manage all the data sources that give your agents the information they need to work effectively.
+            </p>
+          </div>
+
           {/* MoneyForward Services Integration - Primary Section */}
           <div className='mb-12'>
             <div className='mb-6'>
@@ -306,12 +316,69 @@ const DataSourcesContainer = () => {
             </div>
           </div>
 
+          {/* Add Custom Data - Promoted Section */}
+          <div className='mb-12'>
+            <div className='mb-6'>
+              <h2 className='mb-2 text-2xl font-bold text-text-primary'>
+                Add Custom Data
+              </h2>
+              <p className='max-w-3xl leading-relaxed text-text-tertiary'>
+                Upload files or connect other data sources to give your agents additional knowledge and context.
+              </p>
+            </div>
+
+            <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+              <div className='group cursor-pointer rounded-xl border border-components-panel-border bg-components-panel-on-panel-item-bg p-6 transition-all hover:shadow-md'>
+                <div className='flex items-start gap-4'>
+                  <div className='group-hover:bg-text-accent/10 shrink-0 rounded-lg bg-components-icon-bg-orange-soft p-3 transition-colors'>
+                    <RiFileUploadLine className='h-6 w-6 text-text-accent' />
+                  </div>
+                  <div className='flex-1'>
+                    <h4 className='mb-2 text-lg font-semibold text-text-primary'>
+                      Upload File(s)
+                    </h4>
+                    <p className='mb-4 text-sm leading-relaxed text-text-tertiary'>
+                      Upload local documents like PDF, DOCX, or CSV to use as context for your agents.
+                    </p>
+                    <Button variant='secondary' size='small'>
+                      <RiFileUploadLine className='mr-2 h-4 w-4' />
+                      Upload from Computer
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              <div className='group cursor-pointer rounded-xl border border-components-panel-border bg-components-panel-on-panel-item-bg p-6 transition-all hover:shadow-md'>
+                <div className='flex items-start gap-4'>
+                  <div className='group-hover:bg-text-accent/10 shrink-0 rounded-lg bg-components-icon-bg-orange-soft p-3 transition-colors'>
+                    <RiGlobalLine className='h-6 w-6 text-text-accent' />
+                  </div>
+                  <div className='flex-1'>
+                    <h4 className='mb-2 text-lg font-semibold text-text-primary'>
+                      Import from Web
+                    </h4>
+                    <p className='mb-4 text-sm leading-relaxed text-text-tertiary'>
+                      Connect a website URL to scrape its content as a data source for your agents.
+                    </p>
+                    <Button variant='secondary' size='small'>
+                      <RiGlobalLine className='mr-2 h-4 w-4' />
+                      Import URL
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Connected Sources Management Hub */}
           <div className='mb-12'>
             <div className='mb-6'>
-              <h3 className='mb-2 text-xl font-semibold text-text-primary'>
+              <h2 className='mb-2 text-2xl font-bold text-text-primary'>
                 {t('dataset.connectedSources.title')}
-              </h3>
+              </h2>
+              <p className='max-w-3xl leading-relaxed text-text-tertiary'>
+                Manage and monitor all your connected data sources in one place.
+              </p>
             </div>
 
             {/* Card-based Connected Sources List */}
@@ -406,64 +473,10 @@ const DataSourcesContainer = () => {
                   No Connected Sources
                 </h4>
                 <p className='text-text-quaternary'>
-                  Connect your MoneyForward services above to get started.
+                  Connect your MoneyForward services or add custom data above to get started.
                 </p>
               </div>
             )}
-          </div>
-
-          {/* Add Custom Data - Simplified Section */}
-          <div className='mb-8'>
-            <div className='mb-6'>
-              <h3 className='mb-2 text-xl font-semibold text-text-primary'>
-                Add Custom Data
-              </h3>
-              <p className='text-text-tertiary'>
-                Upload files or connect other data sources for your agents
-              </p>
-            </div>
-
-            <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
-              <div className='group cursor-pointer rounded-xl border border-components-panel-border bg-components-panel-on-panel-item-bg p-6 transition-all hover:shadow-md'>
-                <div className='flex items-start gap-4'>
-                  <div className='group-hover:bg-text-accent/10 shrink-0 rounded-lg bg-background-default-subtle p-3 transition-colors'>
-                    <RiFileUploadLine className='h-6 w-6 text-text-accent' />
-                  </div>
-                  <div className='flex-1'>
-                    <h4 className='mb-2 text-lg font-semibold text-text-primary'>
-                      Upload File(s)
-                    </h4>
-                    <p className='mb-4 text-text-tertiary'>
-                      Upload local documents like PDF, DOCX, or CSV to use as context.
-                    </p>
-                    <Button variant='secondary' size='small'>
-                      <RiFileUploadLine className='mr-2 h-4 w-4' />
-                      Upload from Computer
-                    </Button>
-                  </div>
-                </div>
-              </div>
-
-              <div className='group cursor-pointer rounded-xl border border-components-panel-border bg-components-panel-on-panel-item-bg p-6 transition-all hover:shadow-md'>
-                <div className='flex items-start gap-4'>
-                  <div className='group-hover:bg-text-accent/10 shrink-0 rounded-lg bg-background-default-subtle p-3 transition-colors'>
-                    <RiGlobalLine className='h-6 w-6 text-text-accent' />
-                  </div>
-                  <div className='flex-1'>
-                    <h4 className='mb-2 text-lg font-semibold text-text-primary'>
-                      Import from Web
-                    </h4>
-                    <p className='mb-4 text-text-tertiary'>
-                      Connect a website URL to scrape its content as a data source.
-                    </p>
-                    <Button variant='secondary' size='small'>
-                      <RiGlobalLine className='mr-2 h-4 w-4' />
-                      Import URL
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>

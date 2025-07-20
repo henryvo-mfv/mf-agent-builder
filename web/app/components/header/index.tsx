@@ -7,7 +7,7 @@ import DatasetNav from './dataset-nav'
 import EnvNav from './env-nav'
 import PluginsNav from './plugins-nav'
 import ExploreNav from './explore-nav'
-import ToolsNav from './tools-nav'
+import ToolboxNav from './tools-nav'
 import DashboardNav from './dashboard-nav'
 import { WorkspaceProvider } from '@/context/workspace-context'
 import { useAppContext } from '@/context/app-context'
@@ -68,7 +68,7 @@ const Header = () => {
           {!isCurrentWorkspaceDatasetOperator && <ExploreNav />}
           {!isCurrentWorkspaceDatasetOperator && <AppNav />}
           {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
-          {!isCurrentWorkspaceDatasetOperator && <ToolsNav />}
+          {!isCurrentWorkspaceDatasetOperator && <ToolboxNav />}
         </div>
       </div>
     )
@@ -97,7 +97,7 @@ const Header = () => {
         {!isCurrentWorkspaceDatasetOperator && <ExploreNav />}
         {!isCurrentWorkspaceDatasetOperator && <AppNav />}
         {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
-        {!isCurrentWorkspaceDatasetOperator && <ToolsNav />}
+        {!isCurrentWorkspaceDatasetOperator && <ToolboxNav />}
       </div>
       <div className='flex min-w-0 flex-[1] items-center justify-end pl-4 pr-6 min-[1280px]:pl-6'>
         <EnvNav />

@@ -7,26 +7,26 @@ import {
 } from '@remixicon/react'
 import BaseNavItem from '../base-nav-item'
 
-type ToolsNavProps = {
+type ToolboxNavProps = {
   className?: string
 }
 
-const ToolsNav = ({
+const ToolboxNav = ({
   className,
-}: ToolsNavProps) => {
+}: ToolboxNavProps) => {
   const selectedSegment = useSelectedLayoutSegment()
-  const isActive = selectedSegment === 'tools'
+  const isActive = selectedSegment === 'toolbox'
 
   return (
     <BaseNavItem
-      href="/tools"
+      href="/toolbox"
       icon={<RiHammerLine className='h-4 w-4' />}
       activeIcon={<RiHammerFill className='h-4 w-4' />}
-      translationKey="common.menus.tools"
+      translationKey="common.menus.toolbox"
       isActive={isActive}
       className={className}
     />
   )
 }
 
-export default ToolsNav
+export default ToolboxNav
