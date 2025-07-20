@@ -19,7 +19,7 @@ const ExploreNav = ({
 
   return (
     <BaseNavItem
-      href="/explore/apps"
+      href="/explore"
       icon={<RiSparklingLine className='h-4 w-4' />}
       activeIcon={<RiSparklingFill className='h-4 w-4' />}
       translationKey="common.menus.explore"

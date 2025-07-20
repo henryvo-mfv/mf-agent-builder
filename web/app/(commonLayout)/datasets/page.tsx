@@ -1,12 +1,12 @@
 'use client'
 import { useTranslation } from 'react-i18next'
-import Container from './Container'
+import DataSourcesContainer from './Container'
 import useDocumentTitle from '@/hooks/use-document-title'
 
-const AppList = () => {
+const DataSourcesPage = () => {
   const { t } = useTranslation()
   useDocumentTitle(t('common.menus.datasets'))
-  return <Container />
+  return <DataSourcesContainer />
 }
 
-export default AppList
+export default DataSourcesPage

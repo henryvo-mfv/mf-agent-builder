@@ -1,5 +1,5 @@
 const translation = {
-  knowledge: 'Knowledge',
+  knowledge: 'Data Sources',
   chunkingMode: {
     general: 'General',
     parentChild: 'Parent-child',
@@ -35,7 +35,7 @@ const translation = {
     end: 'external knowledge, and this modification will be applied to all of them. Are you sure you want to save this change?',
   },
   editExternalAPIFormWarning: {
-    front: 'This External API is linked to',
+    front: 'This API is linked to',
     end: 'external knowledge',
   },
   deleteExternalAPIConfirmWarningContent: {
@@ -85,7 +85,7 @@ const translation = {
   intro6: ' including accounting, HR, and financial management workflows',
   unavailable: 'Unavailable',
   unavailableTip: 'Embedding model is not available, the default embedding model needs to be configured',
-  datasets: 'KNOWLEDGE',
+  datasets: 'DATA SOURCES',
   datasetsApi: 'API ACCESS',
   externalKnowledgeForm: {
     connect: 'Connect',
@@ -215,6 +215,42 @@ const translation = {
       startLabeling: 'Start Labeling',
       documentInformation: 'Document Information',
       technicalParameters: 'Technical Parameters',
+    },
+  },
+  // MoneyForward Data Sources Integration
+  moneyForwardIntegration: {
+    title: 'Connect Your MoneyForward Services',
+    description: 'Securely connect your MoneyForward service accounts to provide your agents with access to business context.',
+    connectButton: 'Connect',
+    connectedStatus: 'Connected',
+    disconnectedStatus: 'Not Connected',
+    services: {
+      accounting: 'MF Cloud Accounting',
+      expense: 'MF Cloud Expense',
+      payroll: 'MF Cloud Payroll',
+      attendance: 'MF Cloud Attendance',
+      contract: 'MF Cloud Contract',
+      accountingPlus: 'MF Cloud Accounting Plus',
+      hr: 'MF Cloud HR',
+    },
+    serviceDescriptions: {
+      accounting: 'Access accounting data for financial analysis and reporting',
+      expense: 'Connect expense reports and approval workflows',
+      payroll: 'Integrate payroll data for HR operations',
+      attendance: 'Sync attendance records and workforce analytics',
+      contract: 'Access contract documents and compliance data',
+      accountingPlus: 'Advanced accounting features and analytics',
+      hr: 'Comprehensive HR management and employee data',
+    },
+  },
+
+    connectedSources: {
+    title: 'Connected Sources',
+    status: {
+      connected: 'Connected',
+      disconnected: 'Disconnected',
+      syncing: 'Syncing',
+      error: 'Error',
     },
   },
 }
